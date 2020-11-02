@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>After School Club</title>
-    <script src="https://unpkg.com/vue"></script>
+    <title>After School Club</title> <!----Website Title------>
+    <script src="https://unpkg.com/vue"></script> <!------Vue.js link------>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-----Css Link-------->
     <meta charset="UTF-8">
 </head>
 
@@ -22,16 +22,16 @@
             <div class="row"> <!---------Grid class---------->
                 <div class="col-md-2 col-md-offset-1">
 
-                    <img v-bind:src="product.image" alt="maths icon">
+                    <img v-bind:src="product.image" alt="maths icon"> <!-----Icon Image------->
 
                 </div>
                 <div class="col-md-6 col-md-offset-0 description">             
-                    <h1 v-text="product.title"></h1>
-                    <p v-text="product.location"></p>
-                    <p v-text="product.price">
-                    <p v-text="product.spaces + product.spaceNumber"></p>
+                    <h1 v-text="product.title"></h1> <!-----Product Name------->
+                    <p v-text="product.location"></p><!-----Product Location------->
+                    <p v-text="product.price"><!-----Product Price------->
+                    <p v-text="product.spaces + product.spaceNumber"></p><!-----Product Space------->
                     </p>
-                    <button class="default" v-on:click="addToCart"style="border-radius: 8px;">Add To Cart</button>
+                    <button class="default" v-on:click="addToCart"style="border-radius: 8px;">Add To Cart</button> <!-----Button Function------->
 
                 </div>
             </div> <!-------End of Grid class--------->
@@ -46,26 +46,26 @@
     var webstore = new Vue({
         el: '#app',
         data: {
-            sitename: "After School Club", //// Web App Title
+            sitename: "After School Club", //// Web App Title //////
             product: {
                 id: 1,
-                title: "Maths",
-                location: "London",
-                price: "Price: £" + 100,
-                spaces: "Number of spaces: ",
-                spaceNumber: 5,
-                image: "math.png",
+                title: "Maths", ///// Product Name /////
+                location: "London", //// Product Location ////
+                price: "Price: £" + 100, //// Product Price ////
+                spaces: "Number of spaces: ", //// (String) Number Of Space ////
+                spaceNumber: 5, //// (Integer) Space Amount ////
+                image: "math.png", //// Image Path ////
             },
         },
-        methods: {
-            addToCart: function () {
+        methods: { 
+            addToCart: function () {  //// Cart Function ////
                 if (this.product.spaceNumber > 0) {
                     this.product.spaceNumber -= 1;
 
                 }
-            },
-        },
-    });
+            }, //// End Cart Function ////
+        }, //// End Of Method ////
+    }); //// End OF Webstore Variable ////
 
 </script>
 <!----End of Vue.JS------->
