@@ -31,7 +31,7 @@
                     <p v-text="product.price"><!-----Product Price------->
                     <p v-text="product.spaces + product.spaceNumber"></p><!-----Product Space------->
                     </p>
-                    <button class="default" v-on:click="addToCart"style="border-radius: 8px;">Add To Cart</button> <!-----Button Function------->
+                    <button id="button" class="default" v-on:click="addToCart"style="border-radius: 8px;">Add To Cart</button> <!-----Button Function------->
 
                 </div>
             </div> <!-------End of Grid class--------->
@@ -61,7 +61,8 @@
             addToCart: function () {  //// Cart Function ////
                 if (this.product.spaceNumber > 0) {
                     this.product.spaceNumber -= 1;
-
+                } else {
+                    document.getElementById("button").disabled = true;
                 }
             }, //// End Cart Function ////
         }, //// End Of Method ////
